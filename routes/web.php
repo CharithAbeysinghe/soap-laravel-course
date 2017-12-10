@@ -1,4 +1,6 @@
 <?php
+Route::get('soap', 'SoapController@soap');
+
 Route::get('/ejemplo01', function () {
     try {
         $opts = array(
@@ -74,4 +76,27 @@ Route::get('/ejemplo03', function () {
     catch(\Exception $e) {
         echo $e->getMessage();
     }
+});
+
+Route::get('/ejemplo04', function () {
+    //http://docs.guzzlephp.org/en/5.3/
+    $client = new GuzzleHttp\Client();
+    $res = $client->request('GET', 'http://www.webservicex.com/CurrencyConvertor.asmx?wsdl');
+    dd($res->getBody());
+    echo $res->getStatusCode();
+    echo $res->getHeader('content-type');
+    echo $res->getBody();
+
+
+    $factory = new \Meng\AsyncSoap\Guzzle\Factory();
+    $client = $factory->create(new \GuzzleHttp\Client(), 'http://www.mysoapserver.com?WSDL');
+
+    $client->call(
+        'MySoapFunction',
+        ['arg1', 'arg2', 'arg3'],
+        [
+            new SoapHeader($this->config['namespace'], 'username', 'someone'),
+            new SoapHeader($this->config['namespace'], 'password', 'somthing'),
+        ]
+    );
 });

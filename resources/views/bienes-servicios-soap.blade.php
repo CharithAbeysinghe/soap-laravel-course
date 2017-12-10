@@ -31,7 +31,30 @@
     <div class="site-wrapper-inner">
 
         <div class="cover-container">
+            <div>
+                <strong>
+                    ¿Qué es XML?
+                </strong>
+                <p>
+                    Especificación para diseñar lenguajes de marcado, que permite definir etiquetas personalizadas
+                    para descripción y organización de datos.
+                </p>
 
+                <strong>
+                    ¿Qué es WSDL?
+                </strong>
+                <p>
+                    WSDL es una notación XML para describir un servicio web. Una definición WSDL indica a un cliente
+                    cómo componer una solicitud de servicio web y describe la interfaz que proporciona el proveedor del servicio web.
+                </p>
+
+                <strong>¿Qué es SOAP?</strong>
+                <p>
+                    Básicamente SOAP es un paradigma de mensajería de una dirección sin estado, que puede ser utilizado
+                    para formar protocolos más complejos y completos según las necesidades de las aplicaciones que lo
+                    implementan.
+                </p>
+            </div>
             <section class="inner cover">
                 <p>
                     <a href="http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl" target="_blank">
@@ -84,13 +107,6 @@
                     </form>
                 </div>
             </section>
-
-            <div class="mastfoot">
-                <div class="inner">
-                    <p>Servicios soap</p>
-                </div>
-            </div>
-
         </div>
 
     </div>
